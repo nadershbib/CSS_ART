@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.duck {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 415px;
+  border-radius: 50%;
+  background-color: #f6d711;
+  border: 10px solid #000;
+  z-index: 10;
+}
+.eye,
+.nose,
+.hand-left,
+.hand-right,
+.leg {
+  position: absolute;
+}
+.eye {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #000;
+  top: 27%;
+  left: 29%;
+  box-shadow: 145px 0;
+}
+
+.nose {
+  width: 170px;
+  height: 77px;
+  border: 9px solid #000;
+  border-radius: 50%;
+  background-color: orange;
+  top: 50%;
+  left: 50%;
+  transform: translate(-48%, -70%);
+}
+
+.hand-left,
+.hand-right {
+  border-radius: 50%;
+  background-color: #f6d711;
+  border: 10px solid;
+  top: 49%;
+  left: -16%;
+}
+
+.hand-left {
+  width: 37%;
+  height: 35%;
+  top: 44%;
+  animation: moveLeftHand 1s linear infinite alternate;
+}
+
+@keyframes moveLeftHand {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(25deg);
+  }
+}
+
+.hand-left::before {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 68px;
+  top: -21%;
+  left: 37.1%;
+  border-radius: 50%;
+  background-color: #f6d711;
+}
+
+.hand-right {
+  transform: translateX(330px) rotate(-55deg);
+  width: 26%;
+  height: 32%;
+}
+
+.hand-right::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 97px;
+  background-color: #f6d711;
+  border-radius: 50%;
+  top: -39.4%;
+  left: -22%;
+}
+
+.knife {
+  position: absolute;
+  width: 154px;
+  height: 65px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-62%, 88%);
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background-color: #9a9191;
+  border: 10px solid;
+  z-index: -1;
+  animation: moveKnife 1s infinite linear alternate;
+}
+
+@keyframes moveKnife {
+  from {
+    transform: translate(-62%, 88%);
+  }
+
+  to {
+    transform: translate(-62%, 88%) rotate(15deg);
+  }
+}
+
+.knife::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -55px;
+  width: 50px;
+  height: 30px;
+  background-color: #eea112;
+  border: 10px solid;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.leg-left,
+.leg-right {
+  position: absolute;
+  width: 130px;
+  height: 75px;
+  background-color: orange;
+  border-radius: 50%;
+  border: 10px solid;
+  bottom: -13%;
+  z-index: -1;
+}
+
+.leg-left {
+  left: 13%;
+}
+
+.leg-right {
+  left: 55%;
+}
